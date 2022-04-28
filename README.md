@@ -1,6 +1,6 @@
 # submission_dicoding
 
-A new Flutter project.
+A new Flutter project Plant App, responsive in mobile & website.
 
 ## Getting Started
 
