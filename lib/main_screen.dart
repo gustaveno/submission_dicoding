@@ -42,15 +42,7 @@ class MainScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth <= 720) {
-            return ProductList();
-          } else {
-            return ProductGrid();
-          }
-        },
-      ),
+      body: ProductList(),
     );
   }
 }
@@ -180,127 +172,6 @@ class ProductList extends StatelessWidget {
                 itemCount: plantList.length,
               ),
             ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class ProductGrid extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 50,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  'Best Selling',
-                  style: TextStyle(
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.w900,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Text(
-                  'Popular',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 210, 210, 210),
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.w900,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Text(
-                  'New',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 210, 210, 210),
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.w900,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Container(
-              height: 500,
-              child: GridView.count(
-                crossAxisCount: 3,
-                crossAxisSpacing: 4,
-                mainAxisSpacing: 16,
-                children: plantList.map((plant) {
-                  return InkWell(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return ProductScreen(plant: plant);
-                      }));
-                    },
-                    child: Card(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Expanded(
-                            child: Image.asset(
-                              plant.image,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text(
-                              plant.name,
-                              style:
-                                  TextStyle(fontFamily: 'Lato', fontSize: 22.0),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8.0, vertical: 10.0),
-                            child: RichText(
-                              text: TextSpan(
-                                text: plant.price + '.',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 12.0,
-                                    color: Colors.black),
-                                children: const <TextSpan>[
-                                  TextSpan(
-                                      text: '00',
-                                      style: TextStyle(
-                                          fontFamily: 'Lato',
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 6.0,
-                                          color: Colors.black)),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                }).toList(),
-              ),
-            )
           ],
         ),
       ),
