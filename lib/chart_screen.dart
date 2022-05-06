@@ -29,52 +29,84 @@ class ChartScreen extends StatelessWidget {
                 fontSize: 24),
           ),
         ),
-        body: Card(
-          elevation: 2,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                SelectButton(),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    height: 100.0,
-                    color: Colors.transparent,
-                    child: Container(
-                      decoration: new BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          image: new DecorationImage(
-                            fit: BoxFit.fitWidth,
-                            image: new AssetImage('images/gambar1.jpg'),
-                          )),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
+        body: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Card(
+                  elevation: 2,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Ficus Altissima',
-                          style: TextStyle(fontSize: 16.0),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 14, horizontal: 8),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        SelectButton(),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            height: 100.0,
+                            color: Colors.transparent,
+                            child: Container(
+                              decoration: new BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0)),
+                                  image: new DecorationImage(
+                                    fit: BoxFit.fitWidth,
+                                    image: new AssetImage(plantList[1].image),
+                                  )),
+                            ),
+                          ),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text('228')
+                        Expanded(
+                          flex: 2,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  plantList[1].name,
+                                  style: TextStyle(fontSize: 16.0),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(plantList[1].price)
+                              ],
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
-          ),
+            Positioned(
+                bottom: 0,
+                width: MediaQuery.of(context).size.width,
+                child: Container(
+                  color: Colors.white,
+                  height: 100,
+                  child: Row(
+                    children: [
+                      Expanded(
+                          flex: 2,
+                          child: Container(
+                            color: Colors.amberAccent,
+                          )),
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            color: Colors.blueGrey,
+                          ))
+                    ],
+                  ),
+                ))
+          ],
         ));
   }
 }
