@@ -115,7 +115,7 @@ class BestList extends StatelessWidget {
                                 padding: EdgeInsets.only(bottom: 30, left: 32),
                                 child: RichText(
                                   text: TextSpan(
-                                    text: plant.price + '.',
+                                    text: '\$' + plant.price + '.',
                                     style: TextStyle(
                                         fontFamily: 'Lato',
                                         fontWeight: FontWeight.w700,

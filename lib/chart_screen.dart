@@ -74,7 +74,7 @@ class ChartScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 10,
                                 ),
-                                Text(plantList[1].price)
+                                Text('\$' + plantList[1].price)
                               ],
                             ),
                           ),
@@ -96,12 +96,41 @@ class ChartScreen extends StatelessWidget {
                       Expanded(
                           flex: 2,
                           child: Container(
-                            color: Colors.amberAccent,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 24.0, vertical: 8.0),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Total Harga',
+                                      style: TextStyle(
+                                        fontFamily: 'Lato',
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 18.0,
+                                      )),
+                                  Text('\$242',
+                                      style: TextStyle(
+                                        fontFamily: 'Lato',
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 18.0,
+                                      ))
+                                ],
+                              ),
+                            ),
                           )),
                       Expanded(
                           flex: 1,
                           child: Container(
-                            color: Colors.blueGrey,
+                            color: Color.fromARGB(255, 32, 178, 93),
+                            alignment: Alignment.center,
+                            child: Text("Checkout (1)",
+                                style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 18.0,
+                                    color: Colors.white)),
                           ))
                     ],
                   ),

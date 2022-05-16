@@ -79,7 +79,7 @@ class ProductSmall extends StatelessWidget {
                               color: Colors.black)),
                       RichText(
                         text: TextSpan(
-                          text: plant.price + '.',
+                          text: '\$' + plant.price + '.',
                           style: TextStyle(
                               fontFamily: 'Lato',
                               fontWeight: FontWeight.w900,
