@@ -20,7 +20,7 @@ class MainScreen extends StatelessWidget {
         ),
         centerTitle: true,
         title: Text(
-          'Plant & Co',
+          'Travelin Aja',
           style: TextStyle(
               color: Colors.black,
               fontFamily: 'Lato',
@@ -115,21 +115,12 @@ class BestList extends StatelessWidget {
                                 padding: EdgeInsets.only(bottom: 30, left: 32),
                                 child: RichText(
                                   text: TextSpan(
-                                    text: '\$' + plant.price + '.',
+                                    text: plant.location,
                                     style: TextStyle(
                                         fontFamily: 'Lato',
                                         fontWeight: FontWeight.w700,
                                         fontSize: 22.0,
                                         color: Colors.black),
-                                    children: const <TextSpan>[
-                                      TextSpan(
-                                          text: '00',
-                                          style: TextStyle(
-                                              fontFamily: 'Lato',
-                                              fontWeight: FontWeight.w700,
-                                              fontSize: 16.0,
-                                              color: Colors.black)),
-                                    ],
                                   ),
                                 ),
                               ),

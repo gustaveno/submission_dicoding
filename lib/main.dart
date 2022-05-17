@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bean n Co',
+      title: 'Travelin Aja',
       theme: ThemeData(),
       home: LandingScreen(),
       scrollBehavior: MyCustomScrollBehavior(),
@@ -28,9 +28,9 @@ class LandingScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Plant & Co',
+              'Travelin Aja',
               style: TextStyle(
-                  color: Color.fromARGB(255, 32, 178, 93),
+                  color: Color.fromARGB(255, 255, 115, 92),
                   fontFamily: 'Lato',
                   fontWeight: FontWeight.w900,
                   fontSize: 36),
@@ -45,7 +45,7 @@ class LandingScreen extends StatelessWidget {
             ElevatedButton(
                 child: Text('Get Started'),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 32, 178, 93),
+                  primary: Color.fromARGB(255, 255, 115, 92),
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(30.0),
                   ),

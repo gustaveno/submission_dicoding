@@ -79,21 +79,12 @@ class ProductSmall extends StatelessWidget {
                               color: Colors.black)),
                       RichText(
                         text: TextSpan(
-                          text: '\$' + plant.price + '.',
+                          text: plant.price,
                           style: TextStyle(
                               fontFamily: 'Lato',
                               fontWeight: FontWeight.w900,
-                              fontSize: 24.0,
+                              fontSize: 22.0,
                               color: Colors.black),
-                          children: const <TextSpan>[
-                            TextSpan(
-                                text: '00',
-                                style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 18.0,
-                                    color: Colors.black)),
-                          ],
                         ),
                       ),
                     ],
@@ -170,7 +161,7 @@ class _FavoriteButtonState extends State<FavoriteButton> {
       child: IconButton(
         icon: Icon(
           isFavorite ? Icons.favorite : Icons.favorite_border,
-          color: Color.fromARGB(255, 32, 178, 93),
+          color: Color.fromARGB(255, 255, 115, 92),
           size: 18,
         ),
         onPressed: () {

@@ -74,7 +74,7 @@ class ChartScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 10,
                                 ),
-                                Text('\$' + plantList[1].price)
+                                Text(plantList[1].price)
                               ],
                             ),
                           ),
@@ -110,7 +110,7 @@ class ChartScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w700,
                                         fontSize: 18.0,
                                       )),
-                                  Text('\$242',
+                                  Text('Rp 15.000',
                                       style: TextStyle(
                                         fontFamily: 'Lato',
                                         fontWeight: FontWeight.w900,
@@ -123,7 +123,7 @@ class ChartScreen extends StatelessWidget {
                       Expanded(
                           flex: 1,
                           child: Container(
-                            color: Color.fromARGB(255, 32, 178, 93),
+                            color: Color.fromARGB(255, 255, 115, 92),
                             alignment: Alignment.center,
                             child: Text("Checkout (1)",
                                 style: TextStyle(
@@ -153,7 +153,7 @@ class _SelectButtonState extends State<SelectButton> {
     return IconButton(
       icon: Icon(
         isFavorite ? Icons.check_box : Icons.check_box_outline_blank,
-        color: (isFavorite) ? Color.fromARGB(255, 32, 178, 93) : Colors.black,
+        color: (isFavorite) ? Color.fromARGB(255, 255, 115, 92) : Colors.black,
         size: 18,
       ),
       onPressed: () {
