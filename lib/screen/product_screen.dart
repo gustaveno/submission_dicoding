@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:submission_dicoding/model/data_plant.dart';
+import 'package:submission_dicoding/model/place.dart';
 
 class ProductScreen extends StatelessWidget {
-  final DataPlant plant;
+  final Place place;
 
-  ProductScreen({required this.plant});
+  ProductScreen({required this.place});
 
   @override
   Widget build(BuildContext context) {
-    return ProductSmall(plant: plant);
+    return ProductSmall(place: place);
   }
 }
 
 class ProductSmall extends StatelessWidget {
-  final DataPlant plant;
+  final Place place;
 
-  ProductSmall({required this.plant});
+  ProductSmall({required this.place});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class ProductSmall extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.fitWidth,
-                      image: AssetImage(plant.image),
+                      image: AssetImage(place.image),
                     ),
                   ),
                 ),
@@ -44,14 +45,19 @@ class ProductSmall extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        IconButton(
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.black,
+                        CircleAvatar(
+                          backgroundColor: Color.fromARGB(255, 254, 254, 254),
+                          radius: 22,
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.arrow_back,
+                              color: Colors.black,
+                              size: 18,
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                           ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
                         ),
                         FavoriteButton(),
                       ],
@@ -71,7 +77,7 @@ class ProductSmall extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(plant.name,
+                      Text(place.name,
                           style: TextStyle(
                               fontFamily: 'Lato',
                               fontWeight: FontWeight.w900,
@@ -79,7 +85,7 @@ class ProductSmall extends StatelessWidget {
                               color: Colors.black)),
                       RichText(
                         text: TextSpan(
-                          text: plant.price,
+                          text: place.price,
                           style: TextStyle(
                               fontFamily: 'Lato',
                               fontWeight: FontWeight.w900,
@@ -116,7 +122,7 @@ class ProductSmall extends StatelessWidget {
                     height: 18,
                   ),
                   Text(
-                    plant.description,
+                    place.description,
                     style: TextStyle(fontFamily: 'lato', fontSize: 13),
                   ),
                   SizedBox(
