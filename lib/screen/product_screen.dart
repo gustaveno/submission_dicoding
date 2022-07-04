@@ -21,6 +21,43 @@ class ProductSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          height: kToolbarHeight, //set your height here
+          width: double.maxFinite, //set your width here
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: Offset(0, 3), // changes position of shadow
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Container(
+                height: kToolbarHeight - 14,
+                width: MediaQuery.of(context).size.width - 160,
+                child: ElevatedButton(
+                    onPressed: () {
+                      showAlertDialog(context);
+                    },
+                    child: Center(child: ButtonFill()),
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(200, 255, 114, 92),
+                        textStyle: TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.w700))),
+              ),
+              //add as many tabs as you want here
+            ],
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -124,22 +161,6 @@ class ProductSmall extends StatelessWidget {
                   Text(
                     place.description,
                     style: TextStyle(fontFamily: 'lato', fontSize: 13),
-                  ),
-                  SizedBox(
-                    height: 34,
-                  ),
-                  Container(
-                    height: 54,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        showAlertDialog(context);
-                      },
-                      child: Center(child: ButtonFill()),
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.black,
-                          textStyle: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w700)),
-                    ),
                   ),
                 ],
               ),

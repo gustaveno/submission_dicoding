@@ -58,6 +58,7 @@ class _BestListState extends State<BestList> {
                           child: SizedBox(
                             width: 300,
                             child: Card(
+                              color: Color.fromARGB(255, 0, 0, 0),
                               semanticContainer: true,
                               clipBehavior: Clip.antiAliasWithSaveLayer,
                               child: Stack(
@@ -65,32 +66,41 @@ class _BestListState extends State<BestList> {
                                   Ink.image(
                                     image: AssetImage(place.image),
                                     fit: BoxFit.cover,
+                                    colorFilter: ColorFilter.mode(
+                                        Color.fromARGB(123, 25, 25, 25),
+                                        BlendMode.darken),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 35, left: 30),
-                                    child: Text(
-                                      place.name,
-                                      style: TextStyle(
-                                          fontFamily: 'Lato', fontSize: 22.0),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Padding(
-                                      padding:
-                                          EdgeInsets.only(bottom: 30, left: 32),
-                                      child: RichText(
-                                        text: TextSpan(
-                                          text: place.location,
-                                          style: TextStyle(
+                                  Positioned(
+                                      bottom: 40,
+                                      left: 20,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            place.name,
+                                            style: TextStyle(
                                               fontFamily: 'Lato',
-                                              fontWeight: FontWeight.w700,
-                                              fontSize: 22.0,
-                                              color: Colors.black),
-                                        ),
-                                      ),
-                                    ),
-                                  )
+                                              color: Colors.white,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold,
+                                              letterSpacing: 1.2,
+                                            ),
+                                          ),
+                                          Text(
+                                            place.location,
+                                            style: TextStyle(
+                                              fontFamily: 'Lato',
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                              letterSpacing: 1.2,
+                                            ),
+                                          ),
+                                        ],
+                                      ))
                                 ],
                               ),
                               shape: RoundedRectangleBorder(

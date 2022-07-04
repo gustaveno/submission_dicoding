@@ -26,7 +26,7 @@ class MainScreen extends StatelessWidget {
         title: Text(
           'Travelin Aja',
           style: TextStyle(
-              color: Colors.black,
+              color: Color.fromARGB(255, 255, 115, 92),
               fontFamily: 'Lato',
               fontWeight: FontWeight.w900,
               fontSize: 24),
@@ -49,7 +49,7 @@ class MainScreen extends StatelessWidget {
       body: PageView(
         pageSnapping: false,
         scrollDirection: Axis.vertical,
-        children: [BestList(), PopularList(), NewList()],
+        children: [BestList()],
       ),
     );
   }
