@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:submission_dicoding/model/data_plant.dart';
 import 'package:submission_dicoding/model/place.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -41,8 +40,8 @@ class ProductSmall extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Container(
-                height: kToolbarHeight - 14,
-                width: MediaQuery.of(context).size.width - 160,
+                height: kToolbarHeight,
+                width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
                     onPressed: () {
                       showAlertDialog(context);
